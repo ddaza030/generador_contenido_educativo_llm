@@ -1,0 +1,21 @@
+OBJETIVOS
+Objetivo General
+Al terminar el curso, el estudiante estará en capacidad de aplicar técnicas de inteligencia artificial (IA) y
+Machine Learning para la solución de problemas. Igualmente, podrá diseñar, implementar y validar sistemas
+expertos difusos y sistemas inteligentes basados en técnicas supervisadas y no-supervisadas de Machine
+Learning. Para ello los estudiantes podrán utilizar programación lógica, funcional y lenguajes de programación
+como Python, Prolog, JAVA, JESS, MATLAB y herramientas de Machine Learning como Tensor Flow, Keras,
+entre otros.
+Objetivos Específicos
+ Identificar los fundamentos, las técnicas, así como las áreas de aplicación de la IA y Machine Learning.
+ Diferenciar entre sistemas expertos (SEs) y sistemas con técnicas de Machine Learning.
+ Solucionar problemas utilizando técnicas, formalismos de representación del conocimiento y mecanismos
+de razonamiento del área de IA y Machine Learning.
+ Adquirir conocimientos básicos sobre Sistemas Expertos, Lógica Difusa, Técnicas de Búsqueda
+Heurística, Clustering, Clasificación Bayesiana, Árboles de Decisión y Redes Neuronales.
+ Diseñar, desarrollar e implementar un SE difuso basado en CLIPS o PROLOG, JESS (Java Expert
+System Shell) y MATLAB.
+ Utilizar lenguajes de programación como Prolog y Python para resolver problemas de TBH. También,
+manejar herramientas de Machine Learning como Librerías de Python Scikit-learn, TensorFlow, Keras,
+entre otros para resolver problemas de TBH, Clustering, Clasificación Bayesiana, Árboles de Decisión,
+RN, CNN y RNN.
