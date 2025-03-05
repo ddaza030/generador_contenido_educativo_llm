@@ -85,4 +85,4 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
     return 0
 
 if __name__ == "__main__":
-    main(syllabus="contenido.txt", content_type="assessment", output="salida_problems.md", evaluate=True)
+    main(syllabus="algebra_lineal.txt", content_type="assessment", output="lecture_notes_algebra_lineal.md", evaluate=True)

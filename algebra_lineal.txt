@@ -1,0 +1,92 @@
+Universidad Nacional de Colombia, Sede Medellín - Escuela de Matemáticas
+Programa del Curso de Algebra Lineal (1000003) – Semestre 01 de 2021
+Texto Guía: Poole, David. Álgebra lineal: Una introducción moderna, 3ra. edición.
+ Cengage Learning. México, 2011.
+Clase N° Secciones Tema
+ 1 1.1
+1.2
+Vectores (Vectores en Rn
+. Combinaciones lineales)
+Producto Punto (Longitud y ángulo)
+2 3.1
+3.2
+3.7
+Operaciones Matriciales (toda la sección, excepto matrices particionadas)
+Álgebra de matrices (toda la sección, excepto matrices linealmente independientes)
+Grafos y Dígrafos
+ 3 1.2
+2.1
+Proyecciones
+Introducción a los sistemas de ecuaciones lineales (Resolución de sistemas)
+Métodos directos de Resolución (Matrices y forma escalonada. Operaciones elementales de fila)
+4 2.1
+2.2
+Introducción a los sistemas de ecuaciones lineales (Resolución de sistemas)
+Métodos directos de Resolución (Matrices y forma escalonada. Operaciones elementales de fila)
+5 2.2 Métodos directos de Resolución (Eliminación Gaussiana. Eliminación por Gauss-Jordan. Sistemas
+homogéneos)
+6 2.4 Aplicaciones: Asignación de recursos. Análisis de redes.
+7 Clase de repaso
+8 2.3 Conjuntos generadores e independencia lineal.
+9 4.2 Determinantes (Determinante de matrices nxn. Propiedades. Determinantes y operaciones
+matriciales)
+10 3.3 Inversa de una matriz (Propiedades. Método de Gauss-Jordan para calcular la inversa.)
+11 3.5 Sub-espacios de Rn
+ (Definición y ejemplos. Subespacios asociados con matrices)
+12 3.5 Bases y Dimensión en Rn
+ (Bases. Dimensión y rango. Coordenadas)
+13 3.6 Transformaciones lineales en Rn
+. (Definición y ejemplos. Propiedades. Transformaciones
+matriciales)
+14 Clase de repaso
+15 3.6 Composición e inversa de transformaciones lineales en Rn
+.
+16 6.1 Espacios vectoriales y subespacios (ejemplos)
+17 6.2 Independencia lineal, base y dimensión (ejemplos)
+18 6.4 Transformaciones lineales. Composición de transformaciones lineales (Ejemplos). Inversas de
+Transformaciones Lineales.
+19 6.5 Núcleo e Imagen (Transformaciones inyectivas y sobreyectivas, isomorfismos)
+20 6.3 Cambio de base en Rn
+21 Clase de repaso
+22 4.1
+4.3
+Introducción a los valores propios y vectores propios
+Valores y vectores propios de matrices de nxn.
+23 4.4 Semejanza y diagonalización.
+24 5.1 Ortogonalidad en Rn
+ (Conjuntos de vectores ortogonales y ortonormales. Matrices Ortogonales)
+25 5.2 Complementos ortogonales y proyecciones ortogonales
+26 5.3
+5.4
+El proceso de Gram-Schmidt
+Diagonalización ortogonal de matrices simétricas.
+27 5.5 Aplicaciones: Formas Cuadráticas. Graficación de Ecuaciones Cuadráticas. Ejemplos en 2
+dimensiones. (Solamente rotación de ejes)
+28 Clase de Repaso
+Evaluaciones
+Primer parcial (25%)
+Clases N° 1 a 7
+Por definir
+Segundo parcial (25%)
+Clases N° 8 a 14
+Por definir
+Tercer parcial (25%)
+Clases N° 9 a 21.
+Por definir
+Cuarto parcial (25%)
+Clases N° 22 a 28.
+Por definir
+Página Web de la Escuela de Matemáticas
+Todo lo relacionado con el curso estará en Internet en la siguiente dirección:
+ https://ciencias.medellin.unal.edu.co/cursos/algebra-lineal/
+En esta página se encuentran entre otros: el programa del curso, los talleres, temas de parciales de
+semestres anteriores, horario de asesoría de profesores y monitores, citación a parciales.
+Metodología y Recomendaciones:
+El curso de Algebra Lineal tendrá una intensidad de 4 horas teóricas semanales. Recomendamos a los
+estudiantes dedicar al menos 10 horas semanales de trabajo independiente y acudir a las asesorías que
+brindan los profesores. También se recomienda aprender a utilizar el programa MATLAB para realizar
+cálculos. En la página del curso cada, se recomienda seguir las instrucciones y los tutoriales en la página
+del curso.
+Exámenes Parciales:
+Este curso será evaluado con cuatro exámenes parciales con valor del 25% cada uno. Estas evaluaciones
+se realizarán en la plataforma Moodle por medio del siguiente link: https://unvirtual.medellin.unal.edu.co.
