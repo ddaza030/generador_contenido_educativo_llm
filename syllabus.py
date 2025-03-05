@@ -1,3 +1,4 @@
+import os
 import json
 from typing import Dict
 import logging
@@ -79,12 +80,12 @@ class SyllabusParser:
 
         logger.info(f"Calling Gemini API with prompt length: {len(prompt)}")
 
-        if not API_KEY:
+        if not os.getenv('API_KEY'):
             logger.warning("Gemini API key not configured. Returning placeholder.")
             return "This is a placeholder for generated content. Configure Gemini API key to enable real generation."
 
         try:
-            genai.configure(api_key=API_KEY)
+            genai.configure(api_key=os.getenv('API_KEY'))
 
             model_name = "gemini-2.0-flash-001"
             model = genai.GenerativeModel(model_name)

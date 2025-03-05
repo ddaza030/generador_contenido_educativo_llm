@@ -84,6 +84,5 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
 
     return 0
 
-# Permitir que se ejecute desde la línea de comandos
 if __name__ == "__main__":
     main(syllabus="contenido.txt", content_type="assessment", output="salida_problems.md", evaluate=True)

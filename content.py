@@ -1,6 +1,6 @@
-import json
 from typing import Dict
 import logging
+import os
 
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
@@ -286,18 +286,15 @@ When responding, please:
 
     def _call_llm(self, prompt: str, max_tokens: int = 2000) -> str:
         """Make API call to the Gemini LLM service."""
-        import google.generativeai as genai
-        from google.api_core.exceptions import GoogleAPIError
-
         logger.info(f"Calling Gemini API with prompt length: {len(prompt)}")
 
-        if not API_KEY:
+        if not os.getenv('API_KEY'):
             logger.warning("Gemini API key not configured. Returning placeholder.")
             return "This is a placeholder for generated content. Configure Gemini API key to enable real generation."
 
         try:
             # Configure the API key
-            genai.configure(api_key=API_KEY)
+            genai.configure(api_key=os.getenv('API_KEY'))
 
             # Select the Gemini model (default to gemini-pro if not specified)
             model_name = "gemini-2.0-flash-001"

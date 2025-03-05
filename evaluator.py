@@ -1,6 +1,7 @@
 import json
 from typing import Dict
 import logging
+import os
 
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
@@ -52,7 +53,7 @@ class QualityEvaluator:
 
         try:
             # Convert the LLM response to a structured dictionary
-            evaluation_data = json.loads(evaluation_response)
+            evaluation_data = json.loads(evaluation_response[8:-4])
             logger.info("Successfully evaluated content")
             return evaluation_data
         except json.JSONDecodeError:
@@ -91,14 +92,10 @@ class QualityEvaluator:
 
     def _call_llm(self, prompt: str, max_tokens: int = 1500) -> str:
         """Make API call to the Gemini LLM service for evaluation."""
-        import google.generativeai as genai
-        import json
-        from google.api_core.exceptions import GoogleAPIError
-
         logger.info(
             f"Calling Gemini API for evaluation with prompt length: {len(prompt)}")
 
-        if not API_KEY:
+        if not os.getenv('API_KEY'):
             logger.warning("Gemini API key not configured. Returning placeholder.")
             return json.dumps({
                 "accuracy": {"score": 4, "feedback": "Placeholder evaluation feedback"},
@@ -116,7 +113,7 @@ class QualityEvaluator:
 
         try:
             # Configure the API key
-            genai.configure(api_key=API_KEY)
+            genai.configure(api_key=os.getenv('API_KEY'))
 
             # Select the Gemini model (default to gemini-pro if not specified)
             model_name = "gemini-2.0-flash-001"
@@ -138,7 +135,7 @@ class QualityEvaluator:
             if hasattr(response, 'text'):
                 # Validate that the response is valid JSON
                 try:
-                    json_response = json.loads(response.text)
+                    json_response = json.loads(response.text[8:-4])
                     return response.text
                 except json.JSONDecodeError:
                     # If response is not valid JSON, wrap it in a JSON structure
