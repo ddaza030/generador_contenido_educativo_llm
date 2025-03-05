@@ -3,8 +3,6 @@ import logging
 import os
 import time
 
-from limiter import RateLimiter
-
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
 
@@ -17,11 +15,42 @@ logging.basicConfig(
 )
 logger = logging.getLogger("edu_content_generator")
 
+class RateLimiter:
+    """Implement API call rate limiting and token management"""
+    
+    def __init__(self, max_tokens_per_minute=60000):
+        self.max_tokens_per_minute = max_tokens_per_minute
+        self.current_tokens = 0
+        self.last_reset_time = time.time()
+    
+    def consume_tokens(self, tokens):
+        """
+        Check and manage token consumption
+        
+        Args:
+            tokens: Number of tokens to consume
+            
+        Returns:
+            Boolean indicating if tokens can be consumed
+        """
+        current_time = time.time()
+        time_since_reset = current_time - self.last_reset_time
+        
+        if time_since_reset >= 60:
+            self.current_tokens = 0
+            self.last_reset_time = current_time
+            
+        if self.current_tokens + tokens > self.max_tokens_per_minute:
+            return False
+            
+        self.current_tokens += tokens
+        return True
+
 # Load environment variables
 class ContentGenerator:
     """Generates educational content based on syllabus information."""
 
-    def __init__(self):
+    def __init__(self, max_tokens_per_minute=60000):
         self.content_types = {
             "lecture_notes": self._generate_lecture_notes,
             "slides": self._generate_slides,
@@ -29,9 +58,9 @@ class ContentGenerator:
             "discussion_questions": self._generate_discussion_questions,
             "assessment": self._generate_assessment
         }
-
+        
         # Initialize rate limiter
-        self.rate_limiter = RateLimiter()
+        self.rate_limiter = RateLimiter(max_tokens_per_minute)
 
         # Load the main prompt template
         self.base_prompt = """
@@ -297,6 +326,7 @@ When responding, please:
         if not os.getenv('API_KEY'):
             logger.warning("Gemini API key not configured. Returning placeholder.")
             return "This is a placeholder for generated content. Configure Gemini API key to enable real generation."
+
         # Estimate token count (rough approximation)
         estimated_tokens = len(prompt.split()) * 1.3  # Approximate conversion from words to tokens
         
@@ -310,6 +340,7 @@ When responding, please:
             if not self.rate_limiter.consume_tokens(int(estimated_tokens) + max_tokens):
                 logger.error("Rate limit still exceeded after waiting. Consider reducing request frequency.")
                 return "Error: API rate limit exceeded. Please try again later."
+
         try:
             # Configure the API key
             genai.configure(api_key=os.getenv('API_KEY'))
@@ -342,4 +373,3 @@ When responding, please:
         except Exception as e:
             logger.error(f"Unexpected error: {str(e)}")
             return f"Unexpected error: {str(e)}"
-
