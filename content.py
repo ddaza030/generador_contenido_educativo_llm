@@ -27,7 +27,8 @@ class ContentGenerator:
             "slides": self._generate_slides,
             "practice_problems": self._generate_practice_problems,
             "discussion_questions": self._generate_discussion_questions,
-            "assessment": self._generate_assessment
+            "assessment": self._generate_assessment,
+            "suggested_readings": self.generate_suggested_readings
         }
 
         # Initialize rate limiter
@@ -289,6 +290,31 @@ When responding, please:
         """
 
         return self._call_llm(prompt, max_tokens=4000)
+    def generate_suggested_readings(self, syllabus_data, topic=None):
+        """
+        Generate suggested readings and resources
+        
+        Args:
+            syllabus_data: Parsed syllabus information
+            topic: Optional specific topic
+        
+        Returns:
+            List of suggested readings
+        """
+        # Implement reading suggestion generation
+        suggested_readings_prompt = f"""
+        Generate an academically rigorous list of suggested readings for:
+        Course: {syllabus_data.get('course_title', 'N/A')}
+        Topic: {topic or 'General Course Content'}
+        
+        Include:
+        - Academic journal articles
+        - Textbook chapters
+        - Online resources
+        - Supplementary materials
+        """
+        
+        return self._call_llm(suggested_readings_prompt, max_tokens=1000)
 
     def _call_llm(self, prompt: str, max_tokens: int = 2000) -> str:
         """Make API call to the Gemini LLM service."""
