@@ -19,7 +19,8 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
     if syllabus is None or content_type is None:
         # Si los argumentos no se pasan como parámetros, tomarlos desde la línea de comandos
         parser = argparse.ArgumentParser(description="Educational Content Generator")
-        parser.add_argument("--syllabus", required=True, help="Path to syllabus file")
+        parser.add_argument("--syllabus", required=True, 
+                            help="Path to syllabus file (PDF, DOCX, or TXT)")
         parser.add_argument("--type",
                             choices=["lecture_notes", "slides", "practice_problems",
                                      "discussion_questions", "assessment"],
@@ -38,19 +39,14 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
         output = args.output
         evaluate = args.evaluate
 
-    # Leer archivo del syllabus
-    try:
-        with open(syllabus, 'r', encoding='utf-8') as file:
-            syllabus_text = file.read()
-    except FileNotFoundError:
-        logger.error(f"Syllabus file not found: {syllabus}")
-        return 1
-
+    # Crear instancia de SyllabusParser
     parser = SyllabusParser()
-    syllabus_data = parser.parse(syllabus_text)
+
+    # Usar el nuevo método parse_file para manejar diferentes tipos de archivos
+    syllabus_data = parser.parse_file(syllabus)
 
     if "error" in syllabus_data:
-        logger.error(syllabus_data["error"])
+        logger.error(f"Error parsing syllabus: {syllabus_data['error']}")
         return 1
 
     # Generar contenido
@@ -73,8 +69,6 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
             with open(output, 'w', encoding='utf-8') as file:
                 file.write(content)
             logger.info(f"Content saved to {output}")
-
-
         except IOError as e:
             logger.error(f"Failed to write output file: {str(e)}")
     else:
@@ -85,4 +79,4 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
     return 0
 
 if __name__ == "__main__":
-    main(syllabus="algebra_lineal.txt", content_type="assessment", output="lecture_notes_algebra_lineal.md", evaluate=True)
+    main(syllabus="algebra.pdf", content_type="assessment", output="lecture_notes_algebra_lineal.md", evaluate=True)

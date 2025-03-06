@@ -2,10 +2,14 @@ import os
 import json
 from typing import Dict
 import logging
+import time
 
+from limiter import RateLimiter 
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
 
+import PyPDF2
+import docx
 
 # Configure logging
 logging.basicConfig(
@@ -16,7 +20,7 @@ logging.basicConfig(
 logger = logging.getLogger("edu_content_generator")
 
 class SyllabusParser:
-    """Extracts structured information from course syllabi."""
+    """Extracts structured information from course syllabi in various formats."""
 
     def __init__(self):
         self.components = [
@@ -31,6 +35,83 @@ class SyllabusParser:
             "schedule",
             "topics"
         ]
+        self.rate_limiter = RateLimiter()
+
+    def parse_file(self, file_path: str) -> Dict:
+        """
+        Parse syllabus from different file types.
+
+        Args:
+            file_path: Path to the syllabus file
+
+        Returns:
+            Dictionary containing extracted components
+        """
+        # Validate file exists
+        if not os.path.exists(file_path):
+            logger.error(f"File not found: {file_path}")
+            return {"error": "File not found"}
+
+        # Determine file type and extract text
+        file_extension = os.path.splitext(file_path)[1].lower()
+        
+        try:
+            if file_extension == '.pdf':
+                syllabus_text = self._extract_text_from_pdf(file_path)
+            elif file_extension in ['.docx', '.doc']:
+                syllabus_text = self._extract_text_from_docx(file_path)
+            elif file_extension in ['.txt', '.text']:
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    syllabus_text = file.read()
+            else:
+                logger.error(f"Unsupported file type: {file_extension}")
+                return {"error": f"Unsupported file type: {file_extension}"}
+
+            # Parse the extracted text
+            return self.parse(syllabus_text)
+
+        except Exception as e:
+            logger.error(f"Error parsing file {file_path}: {str(e)}")
+            return {"error": f"Error parsing file: {str(e)}"}
+
+    def _extract_text_from_pdf(self, pdf_path: str) -> str:
+        """
+        Extract text from a PDF file.
+
+        Args:
+            pdf_path: Path to the PDF file
+
+        Returns:
+            Extracted text from the PDF
+        """
+        try:
+            with open(pdf_path, 'rb') as file:
+                pdf_reader = PyPDF2.PdfReader(file)
+                text = ""
+                for page in pdf_reader.pages:
+                    text += page.extract_text() + "\n"
+            return text
+        except Exception as e:
+            logger.error(f"Error extracting text from PDF: {str(e)}")
+            raise
+
+    def _extract_text_from_docx(self, docx_path: str) -> str:
+        """
+        Extract text from a DOCX file.
+
+        Args:
+            docx_path: Path to the DOCX file
+
+        Returns:
+            Extracted text from the DOCX
+        """
+        try:
+            doc = docx.Document(docx_path)
+            text = "\n".join([paragraph.text for paragraph in doc.paragraphs])
+            return text
+        except Exception as e:
+            logger.error(f"Error extracting text from DOCX: {str(e)}")
+            raise
 
     def parse(self, syllabus_text: str) -> Dict:
         """
@@ -45,6 +126,15 @@ class SyllabusParser:
         logger.info("Parsing syllabus...")
 
         extraction_prompt = self._build_extraction_prompt(syllabus_text)
+        
+        # Estimated token count (rough approximation)
+        estimated_tokens = len(extraction_prompt.split()) * 1.3
+        
+        # Check rate limit before making API call
+        if not self.rate_limiter.consume_tokens(int(estimated_tokens)):
+            logger.warning("Rate limit exceeded. Waiting before making API call...")
+            time.sleep(60)  # Wait for rate limit to reset
+        
         extracted_data = self._call_llm(extraction_prompt, max_tokens=2000)
 
         try:
@@ -70,12 +160,11 @@ class SyllabusParser:
         Texto del programa:
         {syllabus_text}
 
-        Emite sólo JSON válido sin explicaciones adicionales:
+        Emita sólo JSON válido sin explicaciones adicionales, además asegurese de no incluir los saltos de line en el JSON.
         """
         return prompt
 
-
-    def _call_llm(self, prompt: str, max_tokens: int = 2000) -> str:
+    def _call_llm(self, prompt: str, max_tokens: int = 10000) -> str:
         """Make API call to the Gemini LLM service."""
 
         logger.info(f"Calling Gemini API with prompt length: {len(prompt)}")
@@ -112,3 +201,4 @@ class SyllabusParser:
         except Exception as e:
             logger.error(f"Unexpected error: {str(e)}")
             return f"Unexpected error: {str(e)}"
+        
