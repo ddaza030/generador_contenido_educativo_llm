@@ -71,13 +71,13 @@ edu-generator --syllabus RUTA_SYLLABUS --type TIPO_CONTENIDO [opciones adicional
 
 #### Opciones disponibles:
 
-| Opción | Descripción | Valores posibles | Requerido |
-|--------|-------------|-----------------|-----------|
-| `--syllabus` | Ruta al archivo del syllabus | Ruta de archivo (.txt, .md) | Sí |
-| `--type` | Tipo de contenido a generar | `lecture_notes`, `slides`, `practice_problems`, `discussion_questions`, `assessment` | Sí |
-| `--topic` | Tema específico del syllabus | Texto (ej: "matrices", "derivadas") | No |
-| `--output` | Archivo de salida | Ruta de archivo | No |
-| `--evaluate` | Evaluar la calidad del contenido | Flag (sin valor) | No |
+| Opción | Descripción | Valores posibles                                                                       | Requerido |
+|--------|-------------|----------------------------------------------------------------------------------------|-----------|
+| `--syllabus` | Ruta al archivo del syllabus | Ruta de archivo (.txt, .md)                                                            | Sí |
+| `--type` | Tipo de contenido a generar | `lecture_notes`, `slides`, `practice_problems`, `discussion_questions`, `assessment`, `suggested_readings` | Sí |
+| `--topic` | Tema específico del syllabus | Texto (ej: "matrices", "derivadas")                                                    | No |
+| `--output` | Archivo de salida | Ruta de archivo                                                                        | No |
+| `--evaluate` | Evaluar la calidad del contenido | Flag (sin valor)                                                                       | No |
 
 #### Ejemplos:
 
