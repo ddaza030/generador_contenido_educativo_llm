@@ -150,15 +150,22 @@ Si encuentras problemas al instalar o ejecutar el generador:
 2. Asegúrate de tener las dependencias instaladas
 3. Revisa que el formato del syllabus sea correcto
 
-## Contribuciones
+# Realizado para Tarea 4: Generador de contenido educativo
 
-Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
-1. Haz fork del repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Haz commit de tus cambios (`git commit -am 'Añadir nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Crea un Pull Request
+## Redes Neuronales y Algoritmos Bio-inspirados  
+### Universidad Nacional de Colombia sede Medellín  
+**2024-2**
+---
 
-## Licencia
+### Autores
 
-Este proyecto está licenciado bajo los términos de la licencia MIT.
+**Juan Manuel Vera Echeverri**  
+jverae@unal.edu.co
+**Daniel Daza Macías**  
+dadazam@unal.edu.co
+**Carlos Sebastián Zamora Rosero**  
+cazamorar@unal.edu.co
+**Alejandra Uribe Sierra**  
+aluribes@unal.edu.co
+**Julián Orrego Martínez**  
+jorrego@unal.edu.co  
