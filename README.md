@@ -24,18 +24,7 @@ Este proyecto permite generar automáticamente diferentes tipos de contenido edu
 
 ### Pasos de instalación
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/ddaza030/generador_contenido_educativo_llm.git
-   cd generador_contenido_educativo_llm
-   ```
-
-2. Instala el paquete:
-   ```bash
-   pip install .
-   ```
-
-   O instálalo directamente desde GitHub:
+Instálalo directamente desde GitHub:
    ```bash
    pip install git+https://github.com/ddaza030/generador_contenido_educativo_llm.git
    ```
