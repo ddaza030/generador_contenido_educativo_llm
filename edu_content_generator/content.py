@@ -3,10 +3,9 @@ import logging
 import os
 import time
 
-from limiter import RateLimiter
-
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
+from edu_content_generator.limiter import RateLimiter
 
 
 # Configure logging

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edu-content-generator"
+version = "2.0.0"
+description = "Educational content generator based on syllabus input"
+readme = "README.md"
+authors = [
+    {name = "Juan Manuel Vera Echeverri", email = "jverae@unal.edu.co"},
+    {name = "Daniel Daza Macías", email = "dadazam@unal.edu.co"},
+    {name = "Carlos Sebastián Zamora Rosero", email = "cazamorar@unal.edu.co"},
+    {name = "Alejandra Uribe Sierra", email = "aluribes@unal.edu.co"},
+    {name = "Julián Orrego Martínez", email = "jorrego@unal.edu.co"},
+
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "PyPDF2",
+    "python-docx",
+    "google-generativeai",
+    "markdown2",
+    "pypandoc",
+]
+
+[project.scripts]
+edu-generator = "edu_content_generator:main"
+
+[tool.setuptools]
+packages = ["edu_content_generator"]
