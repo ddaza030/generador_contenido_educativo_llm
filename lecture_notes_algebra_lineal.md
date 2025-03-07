@@ -1,111 +1,117 @@
-### Generación de una Evaluación Integral para Álgebra Lineal
+```markdown
+## Slide 1: Introducción al Álgebra Lineal (Curso 1000003)
 
-1.  **Preguntas de Opción Múltiple:**
+*   Bienvenida al curso de Álgebra Lineal.
+*   Importancia del Álgebra Lineal en diversas disciplinas.
+*   Objetivos principales del curso.
 
-    *   **Pregunta 1:** ¿Cuál de las siguientes opciones describe mejor una combinación lineal de vectores en R<sup>n</sup>?
+> Note: Dar una breve introducción al curso y resaltar la relevancia del álgebra lineal en campos como la ingeniería, la informática y la física.
 
-        a)  Una lista de vectores linealmente independientes.
+## Slide 2: Vectores y Producto Punto
 
-        b)  La suma de vectores multiplicados por escalares.
+*   Definición de vector: magnitud y dirección.
+*   Operaciones básicas con vectores: suma y multiplicación escalar.
+*   Producto punto: definición y propiedades.
+*   Aplicaciones del producto punto: ángulo entre vectores, proyecciones.
 
-        c)  El producto cruz de dos vectores.
+> Note: Explicar qué son los vectores y cómo se operan. Destacar la importancia del producto punto para calcular ángulos y proyecciones.
 
-        d)  Un conjunto de vectores ortogonales.
+## Slide 3: Operaciones Matriciales y Álgebra de Matrices
 
-        *   **Respuesta Correcta:** b)
-        *   **Explicación:** Una combinación lineal es una expresión construida a partir de un conjunto de vectores multiplicando cada vector por un escalar y sumando los resultados.
+*   Definición de matriz: filas y columnas.
+*   Tipos de matrices: cuadrada, identidad, cero.
+*   Operaciones con matrices: suma, multiplicación escalar, multiplicación de matrices.
+*   Propiedades del álgebra de matrices.
 
-    *   **Pregunta 2:** Si una matriz A es invertible, ¿cuál de las siguientes afirmaciones es siempre verdadera?
+> Note: Introducir el concepto de matriz y sus diferentes tipos. Explicar cómo se realizan las operaciones básicas con matrices.
 
-        a)  El determinante de A es igual a 0.
+## Slide 4: Grafos y Dígrafos
 
-        b)  A tiene una columna de ceros.
+*   Definición de grafo y dígrafo.
+*   Representación matricial de grafos y dígrafos.
+*   Aplicaciones del álgebra lineal en el análisis de grafos: conectividad, caminos.
 
-        c)  El sistema Ax = b tiene una solución única para toda b.
+> Note: Explicar cómo se pueden representar grafos y dígrafos mediante matrices y cómo el álgebra lineal puede ayudar a analizarlos.
 
-        d)  A es una matriz singular.
+## Slide 5: Sistemas de Ecuaciones Lineales
 
-        *   **Respuesta Correcta:** c)
-        *   **Explicación:** Una matriz invertible garantiza que el sistema de ecuaciones lineales asociado tiene una solución única para cualquier vector b.
+*   Definición de sistema de ecuaciones lineales.
+*   Representación matricial de sistemas de ecuaciones lineales.
+*   Métodos de solución: Eliminación Gaussiana y Gauss-Jordan.
 
-    *   **Pregunta 3:** ¿Qué representa el núcleo (kernel) de una transformación lineal T: V -> W?
+> Note: Introducir los sistemas de ecuaciones lineales y cómo se pueden representar matricialmente. Presentar los métodos de eliminación como herramientas para encontrar soluciones.
 
-        a)  El conjunto de todos los vectores en V que se mapean al vector cero en W.
+## Slide 6: Eliminación Gaussiana y Gauss-Jordan
 
-        b)  El conjunto de todos los vectores en W que son imágenes de algún vector en V.
+*   Descripción detallada del proceso de Eliminación Gaussiana.
+*   Descripción detallada del proceso de Eliminación Gauss-Jordan.
+*   Ejemplos prácticos de resolución de sistemas de ecuaciones lineales.
 
-        c)  La dimensión de V.
+> Note: Explicar paso a paso los métodos de Eliminación Gaussiana y Gauss-Jordan, mostrando ejemplos para una mejor comprensión.
 
-        d)  La dimensión de W.
+## Slide 7: Determinantes e Inversa de una Matriz
 
-        *   **Respuesta Correcta:** a)
-        *   **Explicación:** El núcleo de una transformación lineal es el conjunto de vectores del dominio que se transforman en el vector cero del codominio.
+*   Definición de determinante.
+*   Propiedades de los determinantes.
+*   Cálculo de la inversa de una matriz.
+*   Aplicaciones de la inversa de una matriz.
 
-2.  **Preguntas de Respuesta Corta:**
+> Note: Explicar qué es un determinante y cómo se calcula. Mostrar cómo la inversa de una matriz se puede utilizar para resolver sistemas de ecuaciones.
 
-    *   **Pregunta 1:** Defina el concepto de independencia lineal en un espacio vectorial.
+## Slide 8: Sub-espacios de R^n, Bases y Dimensión
 
-        *   **Respuesta Esperada:** Un conjunto de vectores es linealmente independiente si la única combinación lineal de ellos que da como resultado el vector cero es aquella en la que todos los escalares son cero.
+*   Definición de sub-espacio vectorial.
+*   Concepto de independencia lineal.
+*   Definición de base y dimensión de un sub-espacio.
+*   Ejemplos de sub-espacios en R^n.
 
-    *   **Pregunta 2:** ¿Cuál es la relación entre el rango de una matriz y la dimensión de su espacio columna?
+> Note: Introducir los conceptos de sub-espacio, independencia lineal, base y dimensión, proporcionando ejemplos concretos.
 
-        *   **Respuesta Esperada:** El rango de una matriz es igual a la dimensión de su espacio columna.
+## Slide 9: Transformaciones Lineales en R^n
 
-    *   **Pregunta 3:** Explique cómo se utiliza el proceso de Gram-Schmidt.
+*   Definición de transformación lineal.
+*   Representación matricial de transformaciones lineales.
+*   Núcleo e Imagen de una transformación lineal.
 
-        *   **Respuesta Esperada:** El proceso de Gram-Schmidt es un algoritmo para ortogonalizar un conjunto de vectores linealmente independientes en un espacio con producto interno.
+> Note: Explicar qué es una transformación lineal y cómo se puede representar mediante una matriz. Introducir los conceptos de núcleo e imagen.
 
-3.  **Preguntas de Ensayo:**
+## Slide 10: Valores Propios y Vectores Propios
 
-    *   **Pregunta 1:** Discuta la importancia de los valores y vectores propios en el contexto de la diagonalización de matrices. Incluya ejemplos de aplicaciones.
+*   Definición de valores propios y vectores propios.
+*   Cálculo de valores propios y vectores propios.
+*   Aplicaciones de valores propios y vectores propios.
 
-        *   **Rúbrica:**
-            *   **Excelente (10 puntos):** Explicación clara y completa de los valores y vectores propios, su relación con la diagonalización, y ejemplos de aplicaciones (e.g., análisis de estabilidad, sistemas dinámicos).
-            *   **Bueno (8 puntos):** Explicación correcta de los conceptos y la relación, pero con ejemplos limitados o menos claros.
-            *   **Regular (6 puntos):** Comprensión básica de los conceptos, pero con errores o falta de claridad en la explicación.
-            *   **Deficiente (4 puntos):** Conceptos mal entendidos o explicación incompleta.
+> Note: Explicar qué son los valores propios y vectores propios y cómo se calculan. Destacar su importancia en diversas aplicaciones.
 
-    *   **Pregunta 2:** Describa cómo las transformaciones lineales pueden representarse mediante matrices y cómo esta representación facilita el análisis de la composición e inversión de transformaciones.
+## Slide 11: Ortogonalidad en R^n y Proceso de Gram-Schmidt
 
-        *   **Rúbrica:**
-            *   **Excelente (10 puntos):** Descripción detallada de la representación matricial, cómo la multiplicación de matrices corresponde a la composición de transformaciones, y cómo la inversa de una matriz representa la inversa de la transformación.
-            *   **Bueno (8 puntos):** Explicación correcta pero menos detallada, con ejemplos menos claros.
-            *   **Regular (6 puntos):** Comprensión básica, pero con errores o falta de claridad.
-            *   **Deficiente (4 puntos):** Conceptos mal entendidos o explicación incompleta.
+*   Definición de ortogonalidad.
+*   Complementos ortogonales y proyecciones ortogonales.
+*   El proceso de Gram-Schmidt para ortogonalizar una base.
 
-4.  **Problemas de Resolución:**
+> Note: Introducir el concepto de ortogonalidad y cómo se puede utilizar para construir bases ortogonales mediante el proceso de Gram-Schmidt.
 
-    *   **Problema 1:** Resuelva el siguiente sistema de ecuaciones lineales utilizando eliminación Gaussiana:
+## Slide 12: Diagonalización Ortogonal de Matrices Simétricas
 
-        ```
-        2x + y - z = 8
-        -3x - y + 2z = -11
-        -2x + y + 2z = -3
-        ```
+*   Matrices simétricas y sus propiedades.
+*   Diagonalización ortogonal de matrices simétricas.
+*   Aplicaciones de la diagonalización ortogonal.
 
-        *   **Solución:**
-            1.  Escribir la matriz aumentada.
-            2.  Aplicar operaciones elementales de fila para obtener la forma escalonada reducida.
-            3.  Resolver para x, y, z.
+> Note: Explicar cómo se pueden diagonalizar ortogonalmente las matrices simétricas y destacar las aplicaciones de este proceso.
 
-    *   **Problema 2:** Determine si los siguientes vectores son linealmente independientes:
+## Slide 13: Formas Cuadráticas
 
-        ```
-        v1 = [1, -2, 1]
-        v2 = [2, -1, 0]
-        v3 = [3, 1, -1]
-        ```
+*   Definición de formas cuadráticas.
+*   Representación matricial de formas cuadráticas.
+*   Aplicaciones de las formas cuadráticas.
 
-        *   **Solución:**
-            1.  Formar una matriz con los vectores como columnas.
-            2.  Calcular el determinante de la matriz.
-            3.  Si el determinante es diferente de cero, los vectores son linealmente independientes.
+> Note: Introducir el concepto de formas cuadráticas y cómo se representan mediante matrices.
 
-### Esquema de Calificación
+## Slide 14: Resumen del Curso
 
-*   Preguntas de Opción Múltiple: 3 puntos cada una (9 puntos en total)
-*   Preguntas de Respuesta Corta: 5 puntos cada una (15 puntos en total)
-*   Preguntas de Ensayo: 10 puntos cada una (20 puntos en total)
-*   Problemas de Resolución: 13 puntos cada uno (26 puntos en total)
+*   Repaso de los temas clave del curso.
+*   Importancia del Álgebra Lineal en diversas disciplinas.
+*   Próximos pasos y recursos adicionales.
 
-**Total: 70 puntos**
+> Note: Resumir los principales temas cubiertos en el curso y reiterar la importancia del álgebra lineal. Proporcionar información sobre recursos adicionales para el estudio.
+```
