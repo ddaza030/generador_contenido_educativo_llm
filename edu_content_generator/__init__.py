@@ -1,9 +1,9 @@
 import argparse
 import logging
 
-from syllabus import SyllabusParser
-from content import ContentGenerator
-from evaluator import QualityEvaluator
+from edu_content_generator.syllabus import SyllabusParser
+from edu_content_generator.content import ContentGenerator
+from edu_content_generator.evaluator import QualityEvaluator
 
 logging.basicConfig(
     level=logging.INFO,
