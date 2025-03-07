@@ -4,16 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edu-content-generator"
-version = "0.1.0"
+version = "2.0.0"
 description = "Educational content generator based on syllabus input"
 readme = "README.md"
 authors = [
-    {name = "Project Author", email = "author@example.com"}
+    {name = "Juan Manuel Vera Echeverri", email = "jverae@unal.edu.co"},
+    {name = "Daniel Daza Macías", email = "dadazam@unal.edu.co"},
+    {name = "Carlos Sebastián Zamora Rosero", email = "cazamorar@unal.edu.co"},
+    {name = "Alejandra Uribe Sierra", email = "aluribes@unal.edu.co"},
+    {name = "Julián Orrego Martínez", email = "jorrego@unal.edu.co"},
+
 ]
-license = {text = "MIT"}
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 requires-python = ">=3.7"
