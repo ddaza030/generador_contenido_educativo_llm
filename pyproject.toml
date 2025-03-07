@@ -18,6 +18,8 @@ classifiers = [
 ]
 requires-python = ">=3.7"
 dependencies = [
+    "PyPDF2",
+    "python-docx",
     "google-generativeai",
     "markdown2",
     "pypandoc",

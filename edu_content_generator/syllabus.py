@@ -4,7 +4,7 @@ from typing import Dict
 import logging
 import time
 
-from limiter import RateLimiter 
+from edu_content_generator.limiter import RateLimiter
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
 
