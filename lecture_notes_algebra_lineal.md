@@ -1,184 +1,111 @@
-### Evaluación Integral de Álgebra Lineal (Código: 1000003)
+### Generación de una Evaluación Integral para Álgebra Lineal
 
-**I. Preguntas de Selección Múltiple (2 puntos cada una, total 20 puntos)**
+1.  **Preguntas de Opción Múltiple:**
 
-1.  ¿Cuál de las siguientes opciones es una combinación lineal de los vectores  `v1 = [1, 2]` y `v2 = [3, 4]`?
-    a) `[4, 6]`
-    b) `[2, 3]`
-    c) `[5, 8]`
-    d) `[0, 0]`
+    *   **Pregunta 1:** ¿Cuál de las siguientes opciones describe mejor una combinación lineal de vectores en R<sup>n</sup>?
 
-    *Respuesta Correcta: c) `[5, 8]`*
+        a)  Una lista de vectores linealmente independientes.
 
-    *Explicación: Una combinación lineal es de la forma `a*v1 + b*v2`. En este caso, `1*v1 + (4/3)*v2 = [5, 8]`.*
+        b)  La suma de vectores multiplicados por escalares.
 
-2.  ¿Cuál de las siguientes afirmaciones es verdadera sobre el producto punto de dos vectores ortogonales?
-    a) Siempre es positivo.
-    b) Siempre es negativo.
-    c) Siempre es cero.
-    d) Depende de la longitud de los vectores.
+        c)  El producto cruz de dos vectores.
 
-    *Respuesta Correcta: c) Siempre es cero.*
+        d)  Un conjunto de vectores ortogonales.
 
-    *Explicación: Dos vectores son ortogonales si su producto punto es cero.*
+        *   **Respuesta Correcta:** b)
+        *   **Explicación:** Una combinación lineal es una expresión construida a partir de un conjunto de vectores multiplicando cada vector por un escalar y sumando los resultados.
 
-3.  Si A y B son matrices de nxn, ¿cuál de las siguientes es generalmente verdadera?
-    a)  AB = BA
-    b)  (A + B)^2 = A^2 + 2AB + B^2
-    c)  (A + B)C = AC + BC
-    d)  A^-1 siempre existe
+    *   **Pregunta 2:** Si una matriz A es invertible, ¿cuál de las siguientes afirmaciones es siempre verdadera?
 
-    *Respuesta Correcta: c) (A + B)C = AC + BC*
+        a)  El determinante de A es igual a 0.
 
-    *Explicación: La multiplicación de matrices no es conmutativa, por lo que AB no siempre es igual a BA. La distributividad sí se cumple.*
+        b)  A tiene una columna de ceros.
 
-4.  ¿Cuál de las siguientes afirmaciones define correctamente un subespacio de Rn?
-    a) Debe contener el vector cero.
-    b) Debe ser cerrado bajo la suma de vectores.
-    c) Debe ser cerrado bajo la multiplicación escalar.
-    d) Todas las anteriores.
+        c)  El sistema Ax = b tiene una solución única para toda b.
 
-    *Respuesta Correcta: d) Todas las anteriores.*
+        d)  A es una matriz singular.
 
-    *Explicación: Un subespacio debe cumplir las tres condiciones.*
+        *   **Respuesta Correcta:** c)
+        *   **Explicación:** Una matriz invertible garantiza que el sistema de ecuaciones lineales asociado tiene una solución única para cualquier vector b.
 
-5.  ¿Cuál de las siguientes NO es una operación elemental de fila?
-    a) Intercambiar dos filas.
-    b) Multiplicar una fila por un escalar no cero.
-    c) Sumar un múltiplo de una fila a otra fila.
-    d) Multiplicar una columna por un escalar no cero.
+    *   **Pregunta 3:** ¿Qué representa el núcleo (kernel) de una transformación lineal T: V -> W?
 
-    *Respuesta Correcta: d) Multiplicar una columna por un escalar no cero.*
+        a)  El conjunto de todos los vectores en V que se mapean al vector cero en W.
 
-    *Explicación: Las operaciones elementales se definen sobre las filas.*
+        b)  El conjunto de todos los vectores en W que son imágenes de algún vector en V.
 
-6.  ¿Qué representa el núcleo (kernel) de una transformación lineal?
-    a) El conjunto de vectores que se transforman en el vector cero.
-    b) El conjunto de todos los vectores resultantes de la transformación.
-    c) El determinante de la matriz asociada.
-    d) El rango de la matriz asociada.
+        c)  La dimensión de V.
 
-    *Respuesta Correcta: a) El conjunto de vectores que se transforman en el vector cero.*
+        d)  La dimensión de W.
 
-    *Explicación: El núcleo es el conjunto de vectores que mapean al vector cero bajo la transformación.*
+        *   **Respuesta Correcta:** a)
+        *   **Explicación:** El núcleo de una transformación lineal es el conjunto de vectores del dominio que se transforman en el vector cero del codominio.
 
-7.  ¿Cuál es el proceso de Gram-Schmidt utilizado para?
-    a) Resolver sistemas de ecuaciones lineales.
-    b) Encontrar los valores propios de una matriz.
-    c) Ortogonalizar un conjunto de vectores.
-    d) Calcular la inversa de una matriz.
+2.  **Preguntas de Respuesta Corta:**
 
-    *Respuesta Correcta: c) Ortogonalizar un conjunto de vectores.*
+    *   **Pregunta 1:** Defina el concepto de independencia lineal en un espacio vectorial.
 
-    *Explicación: El proceso de Gram-Schmidt transforma un conjunto de vectores linealmente independientes en un conjunto ortogonal.*
+        *   **Respuesta Esperada:** Un conjunto de vectores es linealmente independiente si la única combinación lineal de ellos que da como resultado el vector cero es aquella en la que todos los escalares son cero.
 
-8.  ¿Qué significa que una matriz sea diagonalizable?
-    a) Que su determinante es diferente de cero.
-    b) Que es invertible.
-    c) Que puede ser transformada en una matriz diagonal mediante una matriz de cambio de base.
-    d) Que tiene todos sus valores propios iguales a cero.
+    *   **Pregunta 2:** ¿Cuál es la relación entre el rango de una matriz y la dimensión de su espacio columna?
 
-    *Respuesta Correcta: c) Que puede ser transformada en una matriz diagonal mediante una matriz de cambio de base.*
+        *   **Respuesta Esperada:** El rango de una matriz es igual a la dimensión de su espacio columna.
 
-    *Explicación: Una matriz es diagonalizable si existe una matriz invertible P tal que P^-1AP es una matriz diagonal.*
+    *   **Pregunta 3:** Explique cómo se utiliza el proceso de Gram-Schmidt.
 
-9.  ¿Qué caracteriza a una matriz ortogonal?
-    a) Su inversa es igual a su transpuesta.
-    b) Su determinante es igual a cero.
-    c) Todos sus elementos son iguales a uno.
-    d) Es simétrica.
+        *   **Respuesta Esperada:** El proceso de Gram-Schmidt es un algoritmo para ortogonalizar un conjunto de vectores linealmente independientes en un espacio con producto interno.
 
-    *Respuesta Correcta: a) Su inversa es igual a su transpuesta.*
+3.  **Preguntas de Ensayo:**
 
-    *Explicación: Una matriz ortogonal cumple que A^-1 = A^T.*
+    *   **Pregunta 1:** Discuta la importancia de los valores y vectores propios en el contexto de la diagonalización de matrices. Incluya ejemplos de aplicaciones.
 
-10. ¿Qué representa un valor propio de una matriz?
-    a) Un vector que no cambia de dirección cuando se aplica la transformación lineal representada por la matriz.
-    b) Un escalar que, al ser multiplicado por un vector propio, resulta en el mismo vector transformado por la matriz.
-    c) El determinante de la matriz.
-    d) La traza de la matriz.
+        *   **Rúbrica:**
+            *   **Excelente (10 puntos):** Explicación clara y completa de los valores y vectores propios, su relación con la diagonalización, y ejemplos de aplicaciones (e.g., análisis de estabilidad, sistemas dinámicos).
+            *   **Bueno (8 puntos):** Explicación correcta de los conceptos y la relación, pero con ejemplos limitados o menos claros.
+            *   **Regular (6 puntos):** Comprensión básica de los conceptos, pero con errores o falta de claridad en la explicación.
+            *   **Deficiente (4 puntos):** Conceptos mal entendidos o explicación incompleta.
 
-    *Respuesta Correcta: b) Un escalar que, al ser multiplicado por un vector propio, resulta en el mismo vector transformado por la matriz.*
+    *   **Pregunta 2:** Describa cómo las transformaciones lineales pueden representarse mediante matrices y cómo esta representación facilita el análisis de la composición e inversión de transformaciones.
 
-    *Explicación: Un valor propio λ satisface la ecuación A*v = λ*v, donde v es el vector propio.*
+        *   **Rúbrica:**
+            *   **Excelente (10 puntos):** Descripción detallada de la representación matricial, cómo la multiplicación de matrices corresponde a la composición de transformaciones, y cómo la inversa de una matriz representa la inversa de la transformación.
+            *   **Bueno (8 puntos):** Explicación correcta pero menos detallada, con ejemplos menos claros.
+            *   **Regular (6 puntos):** Comprensión básica, pero con errores o falta de claridad.
+            *   **Deficiente (4 puntos):** Conceptos mal entendidos o explicación incompleta.
 
-**II. Preguntas de Respuesta Corta (5 puntos cada una, total 20 puntos)**
+4.  **Problemas de Resolución:**
 
-1.  Defina brevemente qué es la independencia lineal.
+    *   **Problema 1:** Resuelva el siguiente sistema de ecuaciones lineales utilizando eliminación Gaussiana:
 
-    *Respuesta Esperada: Un conjunto de vectores es linealmente independiente si ninguno de ellos puede ser escrito como una combinación lineal de los otros.*
+        ```
+        2x + y - z = 8
+        -3x - y + 2z = -11
+        -2x + y + 2z = -3
+        ```
 
-2.  Explique en qué consiste la eliminación Gaussiana.
+        *   **Solución:**
+            1.  Escribir la matriz aumentada.
+            2.  Aplicar operaciones elementales de fila para obtener la forma escalonada reducida.
+            3.  Resolver para x, y, z.
 
-    *Respuesta Esperada: Es un método para resolver sistemas de ecuaciones lineales transformando la matriz aumentada en una forma escalonada reducida mediante operaciones elementales de fila.*
+    *   **Problema 2:** Determine si los siguientes vectores son linealmente independientes:
 
-3.  ¿Cuál es la relación entre el rango de una matriz y la dimensión de su espacio columna?
+        ```
+        v1 = [1, -2, 1]
+        v2 = [2, -1, 0]
+        v3 = [3, 1, -1]
+        ```
 
-    *Respuesta Esperada: El rango de una matriz es igual a la dimensión de su espacio columna.*
+        *   **Solución:**
+            1.  Formar una matriz con los vectores como columnas.
+            2.  Calcular el determinante de la matriz.
+            3.  Si el determinante es diferente de cero, los vectores son linealmente independientes.
 
-4.  Describa brevemente el concepto de transformación lineal.
+### Esquema de Calificación
 
-    *Respuesta Esperada: Una transformación lineal es una función entre dos espacios vectoriales que preserva las operaciones de suma de vectores y multiplicación por un escalar.*
+*   Preguntas de Opción Múltiple: 3 puntos cada una (9 puntos en total)
+*   Preguntas de Respuesta Corta: 5 puntos cada una (15 puntos en total)
+*   Preguntas de Ensayo: 10 puntos cada una (20 puntos en total)
+*   Problemas de Resolución: 13 puntos cada uno (26 puntos en total)
 
-**III. Preguntas de Ensayo (10 puntos cada una, total 30 puntos)**
-
-1.  Discuta cómo el concepto de base y dimensión de un espacio vectorial es fundamental en álgebra lineal. Incluya ejemplos.
-
-    *Rúbrica:
-        *   Definición clara de base y dimensión (3 puntos)
-        *   Explicación de la importancia (4 puntos)
-        *   Ejemplos concretos (3 puntos)*
-
-2.  Explique la importancia de los valores y vectores propios en el análisis de sistemas lineales.
-
-    *Rúbrica:
-        *   Definición clara de valores y vectores propios (3 puntos)
-        *   Explicación de su uso en sistemas lineales (4 puntos)
-        *   Ejemplos de aplicaciones (3 puntos)*
-
-3.  Describa el proceso de diagonalización ortogonal de matrices simétricas y su aplicación en formas cuadráticas.
-
-    *Rúbrica:
-        *   Descripción del proceso de diagonalización ortogonal (4 puntos)
-        *   Explicación de su relación con formas cuadráticas (3 puntos)
-        *   Ejemplo de aplicación (3 puntos)*
-
-**IV. Problemas (10 puntos cada uno, total 30 puntos)**
-
-1.  Resuelva el siguiente sistema de ecuaciones lineales utilizando eliminación Gaussiana:
-    ```
-    2x + y - z = 8
-    -3x - y + 2z = -11
-    -2x + y + 2z = -3
-    ```
-
-    *Solución Esperada:
-        *   Matriz aumentada correcta (2 puntos)
-        *   Operaciones elementales correctas (5 puntos)
-        *   Solución correcta: x=2, y=3, z=-1 (3 puntos)*
-
-2.  Encuentre los valores propios y vectores propios de la matriz:
-    ```
-    A = [[5, -2], [1, 2]]
-    ```
-
-    *Solución Esperada:
-        *   Cálculo correcto del polinomio característico (3 puntos)
-        *   Valores propios correctos: λ1=4, λ2=3 (3 puntos)
-        *   Vectores propios correctos para cada valor propio (4 puntos)*
-
-3.  Determine si los vectores `v1 = [1, 2, 1]`, `v2 = [2, 1, 0]` y `v3 = [1, 0, 0]` son linealmente independientes.
-
-    *Solución Esperada:
-        *   Planteamiento correcto de la ecuación (3 puntos)
-        *   Resolución correcta del sistema (4 puntos)
-        *   Conclusión correcta sobre la independencia lineal (3 puntos)*
-
-**Esquema de Puntuación:**
-
-*   Sección I: 20 puntos
-*   Sección II: 20 puntos
-*   Sección III: 30 puntos
-*   Sección IV: 30 puntos
-
-**Total: 100 puntos**
+**Total: 70 puntos**

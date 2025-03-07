@@ -1,3 +1,5 @@
 google-generativeai
 markdown2
 pypandoc
+PyPDF2
+docx

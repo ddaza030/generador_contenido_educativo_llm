@@ -1,9 +1,11 @@
 from typing import Dict
 import logging
 import os
+import time
 
 import google.generativeai as genai
 from google.api_core.exceptions import GoogleAPIError
+from edu_content_generator.limiter import RateLimiter
 
 
 # Configure logging
@@ -24,8 +26,12 @@ class ContentGenerator:
             "slides": self._generate_slides,
             "practice_problems": self._generate_practice_problems,
             "discussion_questions": self._generate_discussion_questions,
-            "assessment": self._generate_assessment
+            "assessment": self._generate_assessment,
+            "suggested_readings": self.generate_suggested_readings
         }
+
+        # Initialize rate limiter
+        self.rate_limiter = RateLimiter()
 
         # Load the main prompt template
         self.base_prompt = """
@@ -283,6 +289,31 @@ When responding, please:
         """
 
         return self._call_llm(prompt, max_tokens=4000)
+    def generate_suggested_readings(self, syllabus_data, topic=None):
+        """
+        Generate suggested readings and resources
+        
+        Args:
+            syllabus_data: Parsed syllabus information
+            topic: Optional specific topic
+        
+        Returns:
+            List of suggested readings
+        """
+        # Implement reading suggestion generation
+        suggested_readings_prompt = f"""
+        Generate an academically rigorous list of suggested readings for:
+        Course: {syllabus_data.get('course_title', 'N/A')}
+        Topic: {topic or 'General Course Content'}
+        
+        Include:
+        - Academic journal articles
+        - Textbook chapters
+        - Online resources
+        - Supplementary materials
+        """
+        
+        return self._call_llm(suggested_readings_prompt, max_tokens=1000)
 
     def _call_llm(self, prompt: str, max_tokens: int = 2000) -> str:
         """Make API call to the Gemini LLM service."""
@@ -291,7 +322,19 @@ When responding, please:
         if not os.getenv('API_KEY'):
             logger.warning("Gemini API key not configured. Returning placeholder.")
             return "This is a placeholder for generated content. Configure Gemini API key to enable real generation."
-
+        # Estimate token count (rough approximation)
+        estimated_tokens = len(prompt.split()) * 1.3  # Approximate conversion from words to tokens
+        
+        # Apply rate limiting
+        if not self.rate_limiter.consume_tokens(int(estimated_tokens) + max_tokens):
+            wait_time = 60  # seconds to wait for rate limit reset
+            logger.warning(f"Rate limit exceeded. Waiting {wait_time} seconds before proceeding...")
+            time.sleep(wait_time)
+            
+            # Check again after waiting
+            if not self.rate_limiter.consume_tokens(int(estimated_tokens) + max_tokens):
+                logger.error("Rate limit still exceeded after waiting. Consider reducing request frequency.")
+                return "Error: API rate limit exceeded. Please try again later."
         try:
             # Configure the API key
             genai.configure(api_key=os.getenv('API_KEY'))
