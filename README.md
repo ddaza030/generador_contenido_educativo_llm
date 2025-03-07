@@ -121,6 +121,7 @@ main(
 - **practice_problems**: Problemas prácticos con soluciones
 - **discussion_questions**: Preguntas para fomentar la discusión
 - **assessment**: Evaluaciones y exámenes
+- **suggested_readings**: Contenidos y bibliografía adicionales e implementadas en el curso
 
 ## Ejemplos de syllabus
 
