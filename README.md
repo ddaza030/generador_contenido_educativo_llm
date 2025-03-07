@@ -1,3 +1,21 @@
+# Realizado para Tarea 4: Generador de contenido educativo
+
+**Redes Neuronales y Algoritmos Bio-inspirados**
+**Universidad Nacional de Colombia sede Medellín**
+---
+
+### Autores
+**Juan Manuel Vera Echeverri**  
+jverae@unal.edu.co
+**Daniel Daza Macías**  
+dadazam@unal.edu.co
+**Carlos Sebastián Zamora Rosero**  
+cazamorar@unal.edu.co
+**Alejandra Uribe Sierra**  
+aluribes@unal.edu.co
+**Julián Orrego Martínez**  
+jorrego@unal.edu.co  
+
 # Generador de Contenido Educativo con LLM
 
 Este proyecto permite generar automáticamente diferentes tipos de contenido educativo a partir de un syllabus, utilizando modelos de lenguaje de Google (Gemini).
@@ -150,22 +168,3 @@ Si encuentras problemas al instalar o ejecutar el generador:
 2. Asegúrate de tener las dependencias instaladas
 3. Revisa que el formato del syllabus sea correcto
 
-# Realizado para Tarea 4: Generador de contenido educativo
-
-## Redes Neuronales y Algoritmos Bio-inspirados  
-### Universidad Nacional de Colombia sede Medellín  
-**2024-2**
----
-
-### Autores
-
-**Juan Manuel Vera Echeverri**  
-jverae@unal.edu.co
-**Daniel Daza Macías**  
-dadazam@unal.edu.co
-**Carlos Sebastián Zamora Rosero**  
-cazamorar@unal.edu.co
-**Alejandra Uribe Sierra**  
-aluribes@unal.edu.co
-**Julián Orrego Martínez**  
-jorrego@unal.edu.co  
