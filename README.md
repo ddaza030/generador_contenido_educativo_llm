@@ -35,24 +35,24 @@ Para utilizar este generador, necesitas configurar una API Key de Google Gemini:
 **Temporalmente (para la sesión actual):**
 ```bash
 # En CMD
-set GOOGLE_API_KEY=tu_api_key_aquí
+set API_KEY=tu_api_key_aquí
 
 # En PowerShell
-$env:GOOGLE_API_KEY = "tu_api_key_aquí"
+$env:API_KEY = "tu_api_key_aquí"
 ```
 
 **Permanentemente:**
 ```bash
 # En CMD (como administrador)
-setx GOOGLE_API_KEY "tu_api_key_aquí"
+setx API_KEY "tu_api_key_aquí"
 
 # En PowerShell (como administrador)
-[Environment]::SetEnvironmentVariable("GOOGLE_API_KEY", "tu_api_key_aquí", "User")
+[Environment]::SetEnvironmentVariable("API_KEY", "tu_api_key_aquí", "User")
 ```
 
 #### En Linux/macOS:
 ```bash
-export GOOGLE_API_KEY=tu_api_key_aquí
+export API_KEY=tu_api_key_aquí
 ```
 
 Para que sea permanente, añade esta línea a tu archivo `~/.bashrc` o `~/.zshrc`.
