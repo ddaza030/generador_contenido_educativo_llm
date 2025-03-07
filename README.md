@@ -15,6 +15,7 @@
 # Generador de Contenido Educativo con LLM
 
 Este proyecto permite generar automáticamente diferentes tipos de contenido educativo a partir de un syllabus, utilizando modelos de lenguaje de Google (Gemini).
+[Informe técnico](https://deepnote.com/app/alejandra-uribe-sierra-6d3e/Generador-de-Contenido-Educativo-basado-en-LLM-dd9f578f-f9bc-4e66-af6e-7d1aed917f7e?utm_source=app-settings&utm_medium=product-shared-content&utm_campaign=data-app&utm_content=dd9f578f-f9bc-4e66-af6e-7d1aed917f7e)
 
 ## Instalación
 
@@ -31,7 +32,7 @@ Instálalo directamente desde GitHub:
 
 ### Configuración de la API Key
 
-Para utilizar este generador, necesitas configurar una API Key de Google Gemini:
+Para utilizar este generador, necesitas configurar una API Key de Google Gemini. para obtenerla acceda al siguiente link: [Obtener API_KEY](https://aistudio.google.com/app/apikey?hl=es-419&_gl=1*e65xke*_ga*MTE4NjYzNTc4MS4xNzQxMzEzNzA2*_ga_P1DBVKWT6V*MTc0MTMxMzcwNi4xLjEuMTc0MTMxMzc0Ny4xOS4wLjI4MTEyMTY4Mg) 
 
 #### En Windows:
 
