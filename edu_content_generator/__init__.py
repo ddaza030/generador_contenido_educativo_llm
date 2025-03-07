@@ -23,7 +23,7 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
                             help="Path to syllabus file (PDF, DOCX, or TXT)")
         parser.add_argument("--type",
                             choices=["lecture_notes", "slides", "practice_problems",
-                                     "discussion_questions", "assessment"],
+                                     "discussion_questions", "assessment", "suggested_readings"],
                             required=True, help="Type of content to generate")
         parser.add_argument("--topic", help="Specific topic to focus on (optional)")
         parser.add_argument("--output", help="Output file path (optional)")
@@ -79,4 +79,4 @@ def main(syllabus=None, content_type=None, topic=None, output=None, evaluate=Fal
     return 0
 
 if __name__ == "__main__":
-    main(syllabus="algebra.pdf", content_type="assessment", output="lecture_notes_algebra_lineal.md", evaluate=True)
+    main(syllabus="algebra.pdf", content_type="slides", output="lecture_notes_algebra_lineal.md", evaluate=True)
