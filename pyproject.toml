@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edu-content-generator"
+version = "0.1.0"
+description = "Educational content generator based on syllabus input"
+readme = "README.md"
+authors = [
+    {name = "Project Author", email = "author@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "google-generativeai",
+    "markdown2",
+    "pypandoc",
+]
+
+[project.scripts]
+edu-generator = "edu_content_generator:main"
+
+[tool.setuptools]
+packages = ["edu_content_generator"]
